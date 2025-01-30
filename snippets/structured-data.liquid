@@ -15,7 +15,7 @@
     "@type": "Offer",
     "priceCurrency": "{{ cart.currency.iso_code }}",
     "price": "{{ product.price | money_without_currency }}",
-    "availability": "https://schema.org/%7B% {% if product.available %} product.available }InStock{% else %}OutOfStock{% endif %}",
+    "availability": "https://schema.org/%7B% {% if product.available %} InStock{% else %}OutOfStock{% endif %}",
     "seller": {
       "@type": "Organization",
       "name": "{{ shop.name }}"
