@@ -1,6 +1,51 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{% comment %} Header for Single Product Store {% endcomment %}
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-wrapper">
+      <a href="/" class="logo">
+        <img src="{{ shop.logo | img_url: 'medium' }}" alt="{{ shop.name }}">
+      </a>
+
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#buy">Comprar</a></li>
+          <li><a href="/cart">Carrito (<span id="cart-count">{{ cart.item_count }}</span>)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
   }
-{% endschema %}
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .site-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  .site-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    fetch('/cart.js')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("cart-count").textContent = data.item_count;
+      });
+  });
+</script>
