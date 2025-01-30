@@ -1,3 +1,36 @@
 [
-
+  {
+    "name": "Single Product Theme",
+    "settings": [
+      {
+        "type": "text",
+        "id": "shop_name",
+        "label": "Nombre de la tienda",
+        "default": "Mi Tienda"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo de la tienda"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Color Primario",
+        "default": "#e76f51"
+      },
+      {
+        "type": "color",
+        "id": "secondary_color",
+        "label": "Color Secundario",
+        "default": "#333"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_trust_badges",
+        "label": "Mostrar insignias de confianza",
+        "default": true
+      }
+    ]
+  }
 ]
