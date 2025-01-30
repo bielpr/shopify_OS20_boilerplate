@@ -1,6 +1,50 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{% comment %} Hero Section - Main Product Display {% endcomment %}
+
+<section class="hero-section" id="buy">
+  <div class="container">
+    <div class="hero-wrapper">
+      <div class="hero-image">
+        <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
+      </div>
+      <div class="hero-content">
+        <h1>{{ product.title }}</h1>
+        <p>{{ product.description | strip_html | truncatewords: 30 }}</p>
+        <p class="hero-price">{{ product.price | money }}</p>
+
+        {% include 'product-form' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    background: #f9f9f9;
   }
-{% endschema %}
+  .hero-wrapper {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    align-items: center;
+  }
+  .hero-image img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  .hero-content {
+    max-width: 500px;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  .hero-price {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 15px 0;
+  }
+</style>
