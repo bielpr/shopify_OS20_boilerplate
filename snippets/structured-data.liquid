@@ -10,7 +10,7 @@
   "@context": "https://schema.org/",
   "@type": "Product",
   "name": "{{ product.title }}",
-  "image": "{{ product.featured_image | img_url: 'large' }}",
+  "image": "{{ product.featured_image | image_url: 'large' }}",
   "description": "{{ product.description | strip_html | truncatewords: 30 }}",
   "brand": {
     "@type": "Brand",
