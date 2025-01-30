@@ -10,7 +10,7 @@
   <meta name="author" content="{{ shop.name }}">
   <meta property="og:title" content="{{ page_title }}">
   <meta property="og:description" content="{{ page_description | default: shop.meta_description }}">
-  <meta property="og:image" content="{{ product.featured_image | img_url: 'large' | default: shop.logo | img_url: 'large' }}">
+  <meta property="og:image" content="{{ product.featured_image | image_url: 'large' | default: shop.logo | image_url: 'large' }}">
   <meta property="og:url" content="{{ canonical_url }}">
   <meta property="og:type" content="website">
   <title>{{ page_title }} - {{ shop.name }}</title>
