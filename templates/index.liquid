@@ -1,47 +1,32 @@
-{% comment %} Homepage Template {% endcomment %}
+{% comment %} Homepage - Single Product Focus {% endcomment %}
 
-{% section 'hero' %}
+<section class="hero-section">
+  {% section 'hero' %}
+</section>
 
-<section class="featured-products">
+<section class="product-details">
   <div class="container">
-    <h2>Productos Destacados</h2>
-    <div class="product-grid">
-      {% for product in collections['featured'].products limit:4 %}
-        <div class="product-card">
-          <a href="{{ product.url }}">
-            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
-            <h3>{{ product.title }}</h3>
-            <p>{{ product.price | money }}</p>
-          </a>
-        </div>
-      {% endfor %}
-    </div>
+    <h2>Detalles del Producto</h2>
+    <p>{{ product.description }}</p>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <p>⭐⭐⭐⭐⭐ "¡Este producto cambió mi vida!"</p>
   </div>
 </section>
 
 <style>
-  .featured-products {
+  .product-details, .testimonials {
     padding: 40px 0;
     text-align: center;
   }
-  .product-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-  }
-  .product-card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    width: 200px;
-  }
-  .product-card img {
-    max-width: 100%;
-    border-radius: 5px;
-  }
-  .product-card h3 {
+  .product-details p, .testimonials p {
+    max-width: 800px;
+    margin: 0 auto;
     font-size: 18px;
-    margin: 10px 0;
+    line-height: 1.6;
   }
 </style>
