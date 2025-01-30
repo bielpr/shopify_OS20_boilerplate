@@ -1,0 +1,47 @@
+{% comment %} Homepage Template {% endcomment %}
+
+{% section 'hero' %}
+
+<section class="featured-products">
+  <div class="container">
+    <h2>Productos Destacados</h2>
+    <div class="product-grid">
+      {% for product in collections['featured'].products limit:4 %}
+        <div class="product-card">
+          <a href="{{ product.url }}">
+            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.price | money }}</p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .featured-products {
+    padding: 40px 0;
+    text-align: center;
+  }
+  .product-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  .product-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+  }
+  .product-card img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  .product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+</style>
