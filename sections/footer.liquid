@@ -1,6 +1,49 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{% comment %} Footer Section - Trust Signals and Links {% endcomment %}
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-wrapper">
+      <div class="footer-info">
+        <p>&copy; {{ 'now' | date: "%Y" }} {{ shop.name }}. Todos los derechos reservados.</p>
+      </div>
+
+      <div class="footer-links">
+        <ul>
+          <li><a href="/pages/terms">Términos y Condiciones</a></li>
+          <li><a href="/pages/privacy">Política de Privacidad</a></li>
+          <li><a href="/pages/contact">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-trust">
+        <p>💳 Pagos Seguros | 🚚 Envíos Rápidos | 🔒 Protección de Datos</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #2a2a2a;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
   }
-{% endschema %}
+  .footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-links a {
+    text-decoration: none;
+    color: #bbb;
+  }
+  .footer-trust {
+    font-size: 14px;
+  }
+</style>
