@@ -1,0 +1,30 @@
+{% comment %} Structured Data for SEO Optimization {% endcomment %}
+
+{% assign availability = "OutOfStock" %}
+{% if product.available %}
+  {% assign availability = "InStock" %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "{{ product.title }}",
+  "image": "{{ product.featured_image | img_url: 'large' }}",
+  "description": "{{ product.description | strip_html | truncatewords: 30 }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ shop.name }}"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "{{ cart.currency.iso_code }}",
+    "price": "{{ product.price | money_without_currency }}",
+    "availability": "https://schema.org/%7B%7B availability }}",
+    "seller": {
+      "@type": "Organization",
+      "name": "{{ shop.name }}"
+    }
+  }
+}
+</script>
