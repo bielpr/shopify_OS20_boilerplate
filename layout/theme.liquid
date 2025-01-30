@@ -19,7 +19,7 @@
   <link rel="icon" href="{{ 'favicon.ico' | asset_url }}" type="image/x-icon">
   <script defer src="{{ 'theme.js' | asset_url }}"></script>
 
-  {% include 'structured-data' %} {# JSON-LD for SEO #}
+  {% render 'structured-data' %} {# JSON-LD for SEO #}
 
   {{ content_for_header }}
 </head>
